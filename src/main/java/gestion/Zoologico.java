@@ -1,0 +1,46 @@
+package gestion;
+import java.util.ArrayList;
+
+public class Zoologico{
+    private String nombre;
+    private String ubicacion;
+    private ArrayList<Zona> zonas = new ArrayList<>();
+
+    public Zoologico(){
+
+    }
+
+    public Zoologico(String nombre, String ubicacion){
+        this.nombre= nombre;
+        this.ubicacion= ubicacion;
+    }
+
+    public void agregarZonas(Zona zona){
+        this.zonas.add(zona);
+        zona.setZoo(this);
+    }
+
+    public String getNombre(){
+        return.this.nombre;
+    }
+
+    public String getUbicacion(){
+        return this.ubicacion;
+    }
+
+    public ArrayList<Zona> getZona(){
+        return this.zonas;
+    }
+
+    public void setUbicacion(String ubicacion){
+        this.ubicacion= ubicacion;
+    }
+
+    public int cantidadTotalAnimales(){
+        int i=0;
+        for (Zona zona : zonas){
+            i+= zona.cantidadAnimales();
+        }
+        return i;
+    }
+}
