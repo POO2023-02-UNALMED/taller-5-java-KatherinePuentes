@@ -21,7 +21,7 @@ public class Zoologico{
     }
 
     public String getNombre(){
-        return.this.nombre;
+        return this.nombre;
     }
 
     public String getUbicacion(){
